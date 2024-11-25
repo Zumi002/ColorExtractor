@@ -12,6 +12,8 @@ namespace GK_ColorExtractor.ImageUtils
     {
         public Vector4[] RGB = new Vector4[3];//R G B;
 
+        public Vector2 wpOrg;
+
         public Vector4 wp;
 
         public float gamma;
@@ -30,7 +32,7 @@ namespace GK_ColorExtractor.ImageUtils
             calcVector(2, bx, by);
 
             gamma = gam;
-
+            wpOrg = new Vector2(wpx, wpy);
             wp = new Vector4(wpx / wpy, 1, (1 - wpx - wpy) / wpy, 0);
 
             Matrix4x4 chromaMatrix = Matrix4x4.Identity;

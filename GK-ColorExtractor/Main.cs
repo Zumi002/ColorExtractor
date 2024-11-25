@@ -172,8 +172,8 @@ namespace GK_ColorExtractor
             bpx.Value = (decimal)cs.RGB[2].X;
             bpy.Value = (decimal)cs.RGB[2].Y;
 
-            wpx.Value = (decimal)cs.wp.X;
-            wpy.Value = (decimal)cs.wp.Y;
+            wpx.Value = (decimal)cs.wpOrg.X;
+            wpy.Value = (decimal)cs.wpOrg.Y;
 
             gamma.Value = (decimal)cs.gamma;
         }
