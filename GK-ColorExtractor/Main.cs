@@ -31,6 +31,7 @@ namespace GK_ColorExtractor
 
 
             //Extract comboBox setup
+            ExtractComboBox.Items.Add("RGB");
             ExtractComboBox.Items.Add("YCrCb");
             ExtractComboBox.Items.Add("HSV");
             ExtractComboBox.Items.Add("Lab");
@@ -87,10 +88,15 @@ namespace GK_ColorExtractor
                 (DirectBitmap, DirectBitmap, DirectBitmap) bmps;
                 if (ExtractComboBox.SelectedIndex == 0)
                 {
+                    bmps = ex.GetRGB();
+                    SetLabels("R", "G", "B");
+                }
+                else if (ExtractComboBox.SelectedIndex == 1)
+                {
                     bmps = ex.GetYCbCr();
                     SetLabels("Y", "Cb", "Cr");
                 }
-                else if (ExtractComboBox.SelectedIndex == 1)
+                else if (ExtractComboBox.SelectedIndex == 2)
                 {
                     bmps = ex.GetHSV();
                     SetLabels("Hue", "Saturation", "Value");

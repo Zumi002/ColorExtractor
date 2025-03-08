@@ -22,7 +22,34 @@ namespace GK_ColorExtractor.ImageUtils
             }
             this.bmp = bmp;
         }
-        // Method to extract the Y component (luminance) from the image
+
+        public (DirectBitmap, DirectBitmap, DirectBitmap) GetRGB()
+        {
+            if (bmp == null)
+                return (null, null, null);
+            DirectBitmap RBmp = new DirectBitmap(bmp.Width, bmp.Height),
+                         GBmp = new DirectBitmap(bmp.Width, bmp.Height),
+                         BBmp = new DirectBitmap(bmp.Width, bmp.Height);
+
+            Parallel.For(0, (int)bmp.Width, (x) =>
+            {
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    Color c = bmp.GetPixel(x, y);
+
+                    Color RColor = Color.FromArgb(c.R, 0, 0);
+                    RBmp.SetPixel(x, y, RColor);
+
+                    Color GColor = Color.FromArgb(0, c.G, 0);
+                    GBmp.SetPixel(x, y, GColor);
+
+                    Color BColor = Color.FromArgb(0, 0, c.B);
+                    BBmp.SetPixel(x, y, BColor);
+                }
+            });
+
+            return (RBmp, GBmp, BBmp);
+        }
         public (DirectBitmap, DirectBitmap, DirectBitmap) GetYCbCr()
         {
             if (bmp == null)
@@ -117,5 +144,6 @@ namespace GK_ColorExtractor.ImageUtils
 
             return (LBmp, aBmp, bBmp);
         }
+
     }
 }

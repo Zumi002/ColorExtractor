@@ -372,9 +372,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(9, 168);
             label5.Name = "label5";
-            label5.Size = new Size(74, 15);
+            label5.Size = new Size(77, 15);
             label5.TabIndex = 8;
-            label5.Text = "Red primary:";
+            label5.Text = "Blue primary:";
             // 
             // gpy
             // 
@@ -401,9 +401,9 @@
             label4.AutoSize = true;
             label4.Location = new Point(9, 139);
             label4.Name = "label4";
-            label4.Size = new Size(74, 15);
+            label4.Size = new Size(85, 15);
             label4.TabIndex = 5;
-            label4.Text = "Red primary:";
+            label4.Text = "Green primary:";
             // 
             // label3
             // 
@@ -495,7 +495,7 @@
             Controls.Add(tableLayoutPanel1);
             MinimumSize = new Size(894, 600);
             Name = "Main";
-            Text = "Form1";
+            Text = "ColorExtractor";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
