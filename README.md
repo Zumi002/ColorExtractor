@@ -1,6 +1,8 @@
 # ColorExtractor
 
-ColorExtractor is an application for extracting and analyzing color components from images. It supports multiple color models and allows manipulation of color spaces for Lab model.
+ColorExtractor is an application for extracting and analyzing color components from images. 
+It supports multiple color models and allows manipulation of color spaces for Lab model.
+The project was developed as part of a university computer graphics course to explore different color formats.
 
 <p align="center">
   <img src="Images/AppImage1.png"/>
